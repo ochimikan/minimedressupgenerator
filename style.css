@@ -1,0 +1,264 @@
+/* ===== リセット ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 基本 ===== */
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background: #f0ece8;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e0d8d0;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c05070;
+  letter-spacing: 0.03em;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ===== ヘッダーボタン ===== */
+#random-btn,
+#export-btn {
+  background: #fff;
+  border: 1.5px solid #d0c8c0;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.82rem;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+#random-btn:hover,
+#export-btn:hover {
+  background: #faf8f6;
+  border-color: #b0a8a0;
+}
+
+#export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== メインレイアウト ===== */
+main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===== プレビューパネル（左） ===== */
+.preview-panel {
+  background: #fff;
+  border-right: 1px solid #e0d8d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  flex-shrink: 0;
+}
+
+#preview {
+  position: relative;
+  width: 318px;
+  height: 598px;
+  background: #f8f6f4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ===== 操作パネル（右） ===== */
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #faf8f6;
+}
+
+/* ===== タブバー ===== */
+#tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 12px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e8e4e0;
+  flex-shrink: 0;
+}
+
+.tab-btn {
+  background: #f0ece8;
+  border: 1.5px solid #ddd8d2;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: #666;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: #e8e4e0;
+  border-color: #c0b8b0;
+}
+
+.tab-btn.active {
+  background: #c05070;
+  border-color: #c05070;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== オプショングリッド ===== */
+#option-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+  gap: 8px;
+  align-content: start;
+}
+
+/* ===== オプションボタン ===== */
+.option-btn {
+  background: #fff;
+  border: 2px solid #e0dcd8;
+  border-radius: 10px;
+  padding: 6px 6px 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  position: relative;
+}
+
+.option-btn:hover {
+  border-color: #b8b0a8;
+  transform: translateY(-1px);
+}
+
+.option-btn.selected {
+  border-color: #c05070;
+  background: #fff5f7;
+}
+
+.option-btn.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 0.65rem;
+  color: #c05070;
+  font-weight: bold;
+}
+
+/* サムネイル画像 */
+.option-btn .thumb {
+  width: 100%;
+  aspect-ratio: 159 / 299;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+/* 「なし」オプション */
+.option-btn.option-none .thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 159 / 299;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f3f1;
+  border-radius: 4px;
+  color: #aaa;
+  font-size: 1.4rem;
+}
+
+.option-btn span {
+  font-size: 0.62rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ===== スクロールバー（Chrome） ===== */
+#option-panel::-webkit-scrollbar {
+  width: 6px;
+}
+#option-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+#option-panel::-webkit-scrollbar-thumb {
+  background: #d0c8c0;
+  border-radius: 3px;
+}
+
+/* ===== レスポンシブ（モバイル） ===== */
+@media (max-width: 680px) {
+  body {
+    overflow: auto;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .preview-panel {
+    border-right: none;
+    border-bottom: 1px solid #e0d8d0;
+    padding: 16px;
+  }
+
+  #preview {
+    width: 200px;
+    height: 377px;
+  }
+
+  .controls-panel {
+    min-height: 420px;
+    overflow: visible;
+  }
+
+  #option-panel {
+    overflow-y: visible;
+  }
+}

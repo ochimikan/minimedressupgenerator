@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniMe ドレスアップ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>MiniMe ドレスアップ</h1>
+    <div class="header-actions">
+      <button id="random-btn">🎲 ランダム</button>
+      <button id="export-btn">⬇ PNG保存</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 左：キャラクタープレビュー -->
+    <div class="preview-panel">
+      <div id="preview">
+        <img id="layer-backhair"  src="img/svg/none.svg"        class="layer" alt="">
+        <img id="layer-lowerbody" src="img/svg/lowerbody01.svg" class="layer" alt="">
+        <img id="layer-upperbody" src="img/svg/upperbody01.svg" class="layer" alt="">
+        <img id="layer-ear"       src="img/svg/ear01.svg"       class="layer" alt="">
+        <img id="layer-face"      src="img/svg/face01.svg"      class="layer" alt="">
+        <img id="layer-mouth"     src="img/svg/mouth01.svg"     class="layer" alt="">
+        <img id="layer-nose"      src="img/svg/nose01.svg"      class="layer" alt="">
+        <img id="layer-eye"       src="img/svg/eye01.svg"       class="layer" alt="">
+        <img id="layer-eyebrows"  src="img/svg/eyebrows01.svg"  class="layer" alt="">
+        <img id="layer-other"     src="img/svg/none.svg"        class="layer" alt="">
+        <img id="layer-flonthair" src="img/svg/flonthair01.svg" class="layer" alt="">
+      </div>
+    </div>
+
+    <!-- 右：操作パネル -->
+    <div class="controls-panel">
+      <div id="tab-bar"></div>
+      <div id="option-panel"></div>
+    </div>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/exporter.js"></script>
+  <script src="js/randomizer.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
