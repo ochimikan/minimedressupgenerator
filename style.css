@@ -144,10 +144,16 @@ main {
   font-weight: 600;
 }
 
-/* ===== オプショングリッド ===== */
+/* ===== オプションパネル（flex列） ===== */
 #option-panel {
   flex: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== オプショングリッド ===== */
+.options-grid {
   padding: 14px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
@@ -229,6 +235,87 @@ main {
 #option-panel::-webkit-scrollbar-thumb {
   background: #d0c8c0;
   border-radius: 3px;
+}
+
+/* ===== カラーセクション ===== */
+.color-section {
+  border-top: 1px solid #e8e4e0;
+  padding: 12px 14px 16px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.color-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.color-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.color-slot:last-child {
+  margin-bottom: 0;
+}
+
+.color-slot-label {
+  font-size: 0.72rem;
+  color: #666;
+  white-space: nowrap;
+  min-width: 72px;
+}
+
+.color-swatches {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.1s;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  padding: 0;
+}
+
+.swatch:hover {
+  transform: scale(1.2);
+}
+
+.swatch.active {
+  border-color: #c05070;
+  box-shadow: 0 0 0 1px #c05070;
+}
+
+/* カスタムカラーピッカー */
+.color-picker {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid #e0dcd8;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+  outline: none;
+  transition: border-color 0.1s;
+}
+
+.color-picker:hover {
+  border-color: #b0a8a0;
 }
 
 /* ===== レスポンシブ（モバイル） ===== */

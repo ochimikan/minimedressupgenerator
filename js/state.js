@@ -25,3 +25,27 @@ function getState() {
   }
   return copy;
 }
+
+// ===== カラー状態 =====
+
+// ユーザーが選んだ色（初期値は初期パーツのデフォルト色に合わせる）
+var colorState = {
+  skin:          '#FAD6B6',
+  hair:          '#291508',  // flonthair01 のデフォルト色
+  eyebrows:      '#482A2A',  // eyebrows01 のデフォルト色
+  eye:           '#291508',  // eye01 のデフォルト色
+  upperClothing: '#F3F757',  // upperbody01 のデフォルト色
+  lowerClothing: '#0E2E48',  // lowerbody01 のデフォルト色
+  mouth:         '#DF775A',  // mouth01 のデフォルト色
+};
+
+// 現在選択中の各カテゴリSVGの元の主要色（置換の FROM 色）
+var categoryTargetColors = {
+  flonthair: '#291508',  // flonthair01
+  backhair:  '#1E0B0B',  // backhair01（初期はnone.svg選択だが設定しておく）
+  eyebrows:  '#482A2A',  // eyebrows01
+  eye:       '#291508',  // eye01
+  upperbody: '#F3F757',  // upperbody01
+  lowerbody: '#0E2E48',  // lowerbody01
+  mouth:     '#DF775A',  // mouth01
+};

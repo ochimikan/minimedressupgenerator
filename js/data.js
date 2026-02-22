@@ -1,16 +1,16 @@
 // パーツデータ定義
-// 実際のSVGファイルに基づいたオプション一覧
+// targetColor: カラー置換の対象となる元の主要色（服・髪・口・目・眉）
 
 const PARTS_DATA = {
   upperbody: {
     label: '上半身',
     layer: 'upperbody',
     options: [
-      { id: 'upperbody01', label: 'タイプ1', file: 'img/svg/upperbody01.svg' },
-      { id: 'upperbody02', label: 'タイプ2', file: 'img/svg/upperbody02.svg' },
-      { id: 'upperbody03', label: 'タイプ3', file: 'img/svg/upperbody03.svg' },
-      { id: 'upperbody04', label: 'タイプ4', file: 'img/svg/upperbody04.svg' },
-      { id: 'upperbody05', label: 'タイプ5', file: 'img/svg/upperbody05.svg' },
+      { id: 'upperbody01', label: 'タイプ1', file: 'img/svg/upperbody01.svg', targetColor: '#F3F757' },
+      { id: 'upperbody02', label: 'タイプ2', file: 'img/svg/upperbody02.svg', targetColor: '#F3F757' },
+      { id: 'upperbody03', label: 'タイプ3', file: 'img/svg/upperbody03.svg', targetColor: '#FFFFFF' },
+      { id: 'upperbody04', label: 'タイプ4', file: 'img/svg/upperbody04.svg', targetColor: '#EAEAEA' },
+      { id: 'upperbody05', label: 'タイプ5', file: 'img/svg/upperbody05.svg', targetColor: '#036EB7' },
     ]
   },
 
@@ -18,13 +18,13 @@ const PARTS_DATA = {
     label: '下半身',
     layer: 'lowerbody',
     options: [
-      { id: 'lowerbody01', label: 'タイプ1', file: 'img/svg/lowerbody01.svg' },
-      { id: 'lowerbody02', label: 'タイプ2', file: 'img/svg/lowerbody02.svg' },
-      { id: 'lowerbody03', label: 'タイプ3', file: 'img/svg/lowerbody03.svg' },
-      { id: 'lowerbody04', label: 'タイプ4', file: 'img/svg/lowerbody04.svg' },
-      { id: 'lowerbody05', label: 'タイプ5', file: 'img/svg/lowerbody05.svg' },
-      { id: 'lowerbody06', label: 'タイプ6', file: 'img/svg/lowerbody06.svg' },
-      { id: 'lowerbody07', label: 'タイプ7', file: 'img/svg/lowerbody07.svg' },
+      { id: 'lowerbody01', label: 'タイプ1', file: 'img/svg/lowerbody01.svg', targetColor: '#0E2E48' },
+      { id: 'lowerbody02', label: 'タイプ2', file: 'img/svg/lowerbody02.svg', targetColor: '#DD3812' },
+      { id: 'lowerbody03', label: 'タイプ3', file: 'img/svg/lowerbody03.svg', targetColor: '#64CC64' },
+      { id: 'lowerbody04', label: 'タイプ4', file: 'img/svg/lowerbody04.svg', targetColor: '#EA5C5C' },
+      { id: 'lowerbody05', label: 'タイプ5', file: 'img/svg/lowerbody05.svg', targetColor: '#EAEAEA' },
+      { id: 'lowerbody06', label: 'タイプ6', file: 'img/svg/lowerbody06.svg', targetColor: '#0E2E48' },
+      { id: 'lowerbody07', label: 'タイプ7', file: 'img/svg/lowerbody07.svg', targetColor: '#231815' },
     ]
   },
 
@@ -43,10 +43,10 @@ const PARTS_DATA = {
     label: '口',
     layer: 'mouth',
     options: [
-      { id: 'mouth01', label: 'タイプ1', file: 'img/svg/mouth01.svg' },
-      { id: 'mouth02', label: 'タイプ2', file: 'img/svg/mouth02.svg' },
-      { id: 'mouth03', label: 'タイプ3', file: 'img/svg/mouth03.svg' },
-      { id: 'mouth04', label: 'タイプ4', file: 'img/svg/mouth04.svg' },
+      { id: 'mouth01', label: 'タイプ1', file: 'img/svg/mouth01.svg', targetColor: '#DF775A' },
+      { id: 'mouth02', label: 'タイプ2', file: 'img/svg/mouth02.svg', targetColor: '#CE6363' },
+      { id: 'mouth03', label: 'タイプ3', file: 'img/svg/mouth03.svg', targetColor: '#DF775A' },
+      { id: 'mouth04', label: 'タイプ4', file: 'img/svg/mouth04.svg', targetColor: '#BC6868' },
     ]
   },
 
@@ -63,12 +63,12 @@ const PARTS_DATA = {
     label: '目',
     layer: 'eye',
     options: [
-      { id: 'eye01', label: 'タイプ1', file: 'img/svg/eye01.svg' },
-      { id: 'eye02', label: 'タイプ2', file: 'img/svg/eye02.svg' },
-      { id: 'eye03', label: 'タイプ3', file: 'img/svg/eye03.svg' },
-      { id: 'eye04', label: 'タイプ4', file: 'img/svg/eye04.svg' },
-      { id: 'eye05', label: 'タイプ5', file: 'img/svg/eye05.svg' },
-      { id: 'eye06', label: 'タイプ6', file: 'img/svg/eye06.svg' },
+      { id: 'eye01', label: 'タイプ1', file: 'img/svg/eye01.svg', targetColor: '#291508' },
+      { id: 'eye02', label: 'タイプ2', file: 'img/svg/eye02.svg', targetColor: '#291508' },
+      { id: 'eye03', label: 'タイプ3', file: 'img/svg/eye03.svg', targetColor: '#291508' },
+      { id: 'eye04', label: 'タイプ4', file: 'img/svg/eye04.svg', targetColor: '#291508' },
+      { id: 'eye05', label: 'タイプ5', file: 'img/svg/eye05.svg', targetColor: '#291508' },
+      { id: 'eye06', label: 'タイプ6', file: 'img/svg/eye06.svg', targetColor: '#291508' },
     ]
   },
 
@@ -85,10 +85,10 @@ const PARTS_DATA = {
     label: '眉毛',
     layer: 'eyebrows',
     options: [
-      { id: 'eyebrows01', label: 'タイプ1', file: 'img/svg/eyebrows01.svg' },
-      { id: 'eyebrows02', label: 'タイプ2', file: 'img/svg/eyebrows02.svg' },
-      { id: 'eyebrows03', label: 'タイプ3', file: 'img/svg/eyebrows03.svg' },
-      { id: 'eyebrows04', label: 'タイプ4', file: 'img/svg/eyebrows04.svg' },
+      { id: 'eyebrows01', label: 'タイプ1', file: 'img/svg/eyebrows01.svg', targetColor: '#482A2A' },
+      { id: 'eyebrows02', label: 'タイプ2', file: 'img/svg/eyebrows02.svg', targetColor: '#482A2A' },
+      { id: 'eyebrows03', label: 'タイプ3', file: 'img/svg/eyebrows03.svg', targetColor: '#6B0000' },
+      { id: 'eyebrows04', label: 'タイプ4', file: 'img/svg/eyebrows04.svg', targetColor: '#473D3D' },
     ]
   },
 
@@ -97,14 +97,14 @@ const PARTS_DATA = {
     layer: 'flonthair',
     options: [
       { id: 'none-flonthair', label: 'なし', file: 'img/svg/none.svg', isNone: true },
-      { id: 'flonthair01', label: 'タイプ1', file: 'img/svg/flonthair01.svg' },
-      { id: 'flonthair02', label: 'タイプ2', file: 'img/svg/flonthair02.svg' },
-      { id: 'flonthair03', label: 'タイプ3', file: 'img/svg/flonthair03.svg' },
-      { id: 'flonthair04', label: 'タイプ4', file: 'img/svg/flonthair04.svg' },
-      { id: 'flonthair05', label: 'タイプ5', file: 'img/svg/flonthair05.svg' },
-      { id: 'flonthair06', label: 'タイプ6', file: 'img/svg/flonthair06.svg' },
-      { id: 'flonthair07', label: 'タイプ7', file: 'img/svg/flonthair07.svg' },
-      { id: 'flonthair08', label: 'タイプ8', file: 'img/svg/flonthair08.svg' },
+      { id: 'flonthair01', label: 'タイプ1', file: 'img/svg/flonthair01.svg', targetColor: '#291508' },
+      { id: 'flonthair02', label: 'タイプ2', file: 'img/svg/flonthair02.svg', targetColor: '#482A2A' },
+      { id: 'flonthair03', label: 'タイプ3', file: 'img/svg/flonthair03.svg', targetColor: '#291508' },
+      { id: 'flonthair04', label: 'タイプ4', file: 'img/svg/flonthair04.svg', targetColor: '#291508' },
+      { id: 'flonthair05', label: 'タイプ5', file: 'img/svg/flonthair05.svg', targetColor: '#291508' },
+      { id: 'flonthair06', label: 'タイプ6', file: 'img/svg/flonthair06.svg', targetColor: '#291508' },
+      { id: 'flonthair07', label: 'タイプ7', file: 'img/svg/flonthair07.svg', targetColor: '#291508' },
+      { id: 'flonthair08', label: 'タイプ8', file: 'img/svg/flonthair08.svg', targetColor: '#473D3D' },
     ]
   },
 
@@ -113,13 +113,13 @@ const PARTS_DATA = {
     layer: 'backhair',
     options: [
       { id: 'none-backhair', label: 'なし', file: 'img/svg/none.svg', isNone: true },
-      { id: 'backhair01', label: 'タイプ1', file: 'img/svg/backhair01.svg' },
-      { id: 'backhair02', label: 'タイプ2', file: 'img/svg/backhair02.svg' },
-      { id: 'backhair03', label: 'タイプ3', file: 'img/svg/backhair03.svg' },
-      { id: 'backhair04', label: 'タイプ4', file: 'img/svg/backhair04.svg' },
-      { id: 'backhair05', label: 'タイプ5', file: 'img/svg/backhair05.svg' },
-      { id: 'backhair06', label: 'タイプ6', file: 'img/svg/backhair06.svg' },
-      { id: 'backhair07', label: 'タイプ7', file: 'img/svg/backhair07.svg' },
+      { id: 'backhair01', label: 'タイプ1', file: 'img/svg/backhair01.svg', targetColor: '#1E0B0B' },
+      { id: 'backhair02', label: 'タイプ2', file: 'img/svg/backhair02.svg', targetColor: '#6B0000' },
+      { id: 'backhair03', label: 'タイプ3', file: 'img/svg/backhair03.svg', targetColor: '#1E0B0B' },
+      { id: 'backhair04', label: 'タイプ4', file: 'img/svg/backhair04.svg', targetColor: '#1E0B0B' },
+      { id: 'backhair05', label: 'タイプ5', file: 'img/svg/backhair05.svg', targetColor: '#291508' },
+      { id: 'backhair06', label: 'タイプ6', file: 'img/svg/backhair06.svg', targetColor: '#291508' },
+      { id: 'backhair07', label: 'タイプ7', file: 'img/svg/backhair07.svg', targetColor: '#291508' },
     ]
   },
 

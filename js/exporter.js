@@ -1,4 +1,4 @@
-// PNG書き出し
+// PNG書き出し（カラーカスタマイズ反映版）
 
 function exportPNG() {
   var btn = document.getElementById('export-btn');
@@ -10,13 +10,24 @@ function exportPNG() {
     'face', 'mouth', 'nose', 'eye', 'eyebrows', 'other', 'flonthair'
   ];
 
-  // 各SVGファイルをfetchしてdata URIに変換
+  // 各SVGをfetch → カラー適用 → data URI に変換
   var promises = layerOrder.map(function(cat) {
     var file = state[cat];
-    return fetch(file)
-      .then(function(r) { return r.text(); })
-      .then(function(text) {
-        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(text);
+
+    // none.svg はそのまま使用
+    if (!file || file === 'img/svg/none.svg') {
+      return fetch('img/svg/none.svg')
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(text);
+        });
+    }
+
+    // カラー適用済みのSVGテキストを使用
+    return fetchSVGCached(file)
+      .then(function(svgText) {
+        var colored = applyColors(svgText, cat);
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(colored);
       });
   });
 

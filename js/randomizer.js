@@ -5,9 +5,14 @@ function randomizeCharacter() {
     var options = PARTS_DATA[category].options;
     var random = options[Math.floor(Math.random() * options.length)];
     setState(category, random.file);
+
+    // targetColor を更新
+    if (random.targetColor) {
+      categoryTargetColors[category] = random.targetColor;
+    }
   });
 
-  renderAll();
+  renderAllWithColor();
 
   // 現在表示中のタブのパネルを再描画して選択状態を反映
   buildOptionPanel(currentTab);

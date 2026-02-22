@@ -5,15 +5,11 @@ var LAYER_ORDER = [
   'face', 'mouth', 'nose', 'eye', 'eyebrows', 'other', 'flonthair'
 ];
 
+// 後方互換ラッパー（colorizer.js を使った描画に委譲）
 function updateLayer(category, filePath) {
-  var el = document.getElementById('layer-' + category);
-  if (el) {
-    el.src = filePath;
-  }
+  renderLayerWithColor(category);
 }
 
 function renderAll() {
-  LAYER_ORDER.forEach(function(category) {
-    updateLayer(category, state[category]);
-  });
+  renderAllWithColor();
 }
