@@ -1,17 +1,18 @@
 // キャラクター選択状態の管理
+// 初期値は scanner.js の initStateFromParts() によって設定される
 
 var state = {
-  upperbody: 'img/svg/upperbody01.svg',
-  lowerbody: 'img/svg/lowerbody01.svg',
-  face:      'img/svg/face01.svg',
-  mouth:     'img/svg/mouth01.svg',
-  nose:      'img/svg/nose01.svg',
-  eye:       'img/svg/eye01.svg',
-  ear:       'img/svg/ear01.svg',
-  eyebrows:  'img/svg/eyebrows01.svg',
-  flonthair: 'img/svg/flonthair01.svg',
-  backhair:  'img/svg/none.svg',
-  other:     'img/svg/none.svg',
+  upperbody: '',
+  lowerbody: '',
+  face:      '',
+  mouth:     '',
+  nose:      '',
+  eye:       '',
+  ear:       '',
+  eyebrows:  '',
+  flonthair: '',
+  backhair:  '',
+  other:     '',
 };
 
 function setState(category, filePath) {
@@ -28,24 +29,25 @@ function getState() {
 
 // ===== カラー状態 =====
 
-// ユーザーが選んだ色（初期値は初期パーツのデフォルト色に合わせる）
+// ユーザーが選んだ色（skin のみ固定初期値。その他は scanAllParts() 後に設定される）
 var colorState = {
   skin:          '#FAD6B6',
-  hair:          '#291508',  // flonthair01 のデフォルト色
-  eyebrows:      '#482A2A',  // eyebrows01 のデフォルト色
-  eye:           '#291508',  // eye01 のデフォルト色
-  upperClothing: '#F3F757',  // upperbody01 のデフォルト色
-  lowerClothing: '#0E2E48',  // lowerbody01 のデフォルト色
-  mouth:         '#DF775A',  // mouth01 のデフォルト色
+  hair:          '#291508',
+  eyebrows:      '#482A2A',
+  eye:           '#291508',
+  upperClothing: '#3EB69D',  // scanner で上書きされる
+  lowerClothing: '#0E2E48',  // scanner で上書きされる
+  mouth:         '#DF775A',  // scanner で上書きされる
 };
 
 // 現在選択中の各カテゴリSVGの元の主要色（置換の FROM 色）
+// scanAllParts() によって動的に設定される
 var categoryTargetColors = {
-  flonthair: '#291508',  // flonthair01
-  backhair:  '#1E0B0B',  // backhair01（初期はnone.svg選択だが設定しておく）
-  eyebrows:  '#482A2A',  // eyebrows01
-  eye:       '#291508',  // eye01
-  upperbody: '#F3F757',  // upperbody01
-  lowerbody: '#0E2E48',  // lowerbody01
-  mouth:     '#DF775A',  // mouth01
+  flonthair: '#291508',
+  backhair:  '#1E0B0B',
+  eyebrows:  '#482A2A',
+  eye:       '#291508',
+  upperbody: '#3EB69D',  // scanner で正しい値に上書きされる
+  lowerbody: '#0E2E48',
+  mouth:     '#DF775A',
 };
