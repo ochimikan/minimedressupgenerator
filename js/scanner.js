@@ -27,6 +27,16 @@ function extractPrimaryColor(svgText) {
     var parser = new DOMParser();
     var doc = parser.parseFromString(svgText, 'image/svg+xml');
 
+    // 非描画定義要素（pattern, defs, linearGradient 等）を除去
+    // これらの要素内の色は実際のレンダリングに使われないため除外する
+    var nonRenderTags = ['pattern', 'defs', 'linearGradient', 'radialGradient', 'clipPath', 'mask', 'symbol'];
+    nonRenderTags.forEach(function(tag) {
+      var els = Array.from(doc.getElementsByTagName(tag));
+      els.forEach(function(el) {
+        if (el.parentNode) el.parentNode.removeChild(el);
+      });
+    });
+
     // display:none の要素をすべて除去
     var allElements = Array.from(doc.querySelectorAll('*'));
     allElements.forEach(function(el) {
